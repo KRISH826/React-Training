@@ -5,6 +5,7 @@ import "./App.css";
 import Card from "./components/Card";
 import BgChanger from "./components/BgChanger";
 import Counter from "./components/Counter";
+import Besthook from "./components/Besthook";
 
 function App() {
   let cardDetails = {
@@ -14,9 +15,10 @@ function App() {
 
   return (
     <>
-      <Counter />
+      {/* <Counter /> */}
       {/* <BgChanger /> */}
       {/* <Card title='Title One' details={cardDetails} /> */}
+      <Besthook />
     </>
   );
 }
