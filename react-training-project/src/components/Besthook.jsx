@@ -1,12 +1,13 @@
 /** @format */
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 
 const Besthook = () => {
   const [length, setlength] = useState(8);
   const [numberallow, setnumberallow] = useState(false);
   const [characterallow, setcharacterallow] = useState(false);
   const [password, setpassword] = useState("");
+  const passwordRef = useRef(null);
 
   const generatePassword = useCallback(() => {
     let pass = "";
@@ -28,9 +29,15 @@ const Besthook = () => {
     setpassword(pass);
   }, [length, numberallow, characterallow, setpassword]);
 
+  const copyClipBoard = useCallback(() => {
+    passwordRef.current?.select();
+    // passwordRef.current?.setSelectionRange(0, 3);
+    window.navigator.clipboard.writeText(password);
+  }, [password]);
+
   useEffect(() => {
     generatePassword();
-  }, [numberallow, characterallow, generatePassword, setpassword]);
+  }, [generatePassword, length, numberallow, characterallow]);
 
   return (
     <main className='my-20 flex flex-col items-center justify-center gap-5 p-5'>
@@ -43,7 +50,9 @@ const Besthook = () => {
           placeholder='generator password'
           readOnly
         />
-        <button className='bg-blue-700 w-[100px] rounded-sm text-white h-[42px] hover:bg-blue-800 transition-all duration-75 ease-linear'>
+        <button
+          className='bg-blue-700 w-[100px] rounded-sm text-white h-[42px] hover:bg-blue-800 transition-all duration-75 ease-linear'
+          onClick={copyClipBoard}>
           Copy
         </button>
       </div>
@@ -55,6 +64,7 @@ const Besthook = () => {
             max={35}
             value={length}
             onChange={(e) => setlength(e.target.value)}
+            ref={passwordRef}
           />
           <label className='mb-0'>length: {length}</label>
         </div>
