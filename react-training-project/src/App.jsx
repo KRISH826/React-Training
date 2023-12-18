@@ -6,6 +6,8 @@ import Card from "./components/Card";
 import BgChanger from "./components/BgChanger";
 import Counter from "./components/Counter";
 import Besthook from "./components/Besthook";
+import CustomHooks from "./components/InputBox";
+import Currency from "./pages/Currency";
 
 function App() {
   let cardDetails = {
@@ -18,7 +20,8 @@ function App() {
       {/* <Counter /> */}
       {/* <BgChanger /> */}
       {/* <Card title='Title One' details={cardDetails} /> */}
-      <Besthook />
+      {/* <Besthook /> */}
+      <Currency />
     </>
   );
 }
