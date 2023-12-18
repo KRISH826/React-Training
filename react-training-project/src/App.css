@@ -1,1 +1,4 @@
 /** @format */
+.bg-image {
+  background-image: url("./assets/bg-react.jpg");
+}
