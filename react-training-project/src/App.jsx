@@ -9,6 +9,8 @@ import Besthook from "./components/Besthook";
 import CustomHooks from "./components/InputBox";
 import Currency from "./pages/Currency";
 import MiniContext from "./components/MiniContext";
+import UserContextProvider from "./context/UserContextProvider.jsx";
+import ThemeChanger from "./pages/ThemeChanger.jsx";
 
 function App() {
   let cardDetails = {
@@ -23,7 +25,10 @@ function App() {
       {/* <Card title='Title One' details={cardDetails} /> */}
       {/* <Besthook /> */}
       {/* <Currency /> */}
-      <MiniContext />
+      {/* <UserContextProvider>
+        <MiniContext />
+      </UserContextProvider> */}
+      <ThemeChanger />
     </>
   );
 }
