@@ -8,6 +8,7 @@ import Counter from "./components/Counter";
 import Besthook from "./components/Besthook";
 import CustomHooks from "./components/InputBox";
 import Currency from "./pages/Currency";
+import MiniContext from "./components/MiniContext";
 
 function App() {
   let cardDetails = {
@@ -21,7 +22,8 @@ function App() {
       {/* <BgChanger /> */}
       {/* <Card title='Title One' details={cardDetails} /> */}
       {/* <Besthook /> */}
-      <Currency />
+      {/* <Currency /> */}
+      <MiniContext />
     </>
   );
 }
