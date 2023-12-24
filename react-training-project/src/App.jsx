@@ -11,6 +11,7 @@ import Currency from "./pages/Currency";
 import MiniContext from "./components/MiniContext";
 import UserContextProvider from "./context/UserContextProvider.jsx";
 import ThemeChanger from "./pages/ThemeChanger.jsx";
+import TodoPage from "./pages/TodoPage.jsx";
 
 function App() {
   let cardDetails = {
@@ -28,7 +29,8 @@ function App() {
       {/* <UserContextProvider>
         <MiniContext />
       </UserContextProvider> */}
-      <ThemeChanger />
+      {/* <ThemeChanger /> */}
+      <TodoPage />
     </>
   );
 }
